@@ -1,0 +1,56 @@
+[
+{
+  "directory": "/home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/build",
+  "command": "/usr/bin/c++ -DBOOST_IOSTREAMS_DYN_LINK -DBOOST_IOSTREAMS_NO_LIB -DBOOST_RANDOM_DYN_LINK -DBOOST_RANDOM_NO_LIB -DBOOST_REGEX_DYN_LINK -DBOOST_REGEX_NO_LIB -DBOOST_SERIALIZATION_DYN_LINK -DBOOST_SERIALIZATION_NO_LIB -DBOOST_SYSTEM_DYN_LINK -DBOOST_SYSTEM_NO_LIB -DBOOST_THREAD_DYN_LINK -DBOOST_THREAD_NO_LIB -DFMT_HEADER_ONLY=1 -DKOKKOS_DEPENDENCE -DLIBCUDACXX_ENABLE_EXPERIMENTAL_MEMORY_RESOURCE -DNDEBUG -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -DTHRUST_DEVICE_SYSTEM=THRUST_DEVICE_SYSTEM_CUDA -DTHRUST_DISABLE_ABI_NAMESPACE -DTHRUST_HOST_SYSTEM=THRUST_HOST_SYSTEM_CPP -DTHRUST_IGNORE_ABI_NAMESPACE_ERROR -DUSE_CUDA -I/home/nikolas/.cache/CPM/autodiff/12dbb7744bf550ac5d8ec00b86533e3b71c642b0 -I/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/include -I/home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/include -I/home/nikolas/.cache/CPM/rmm/8f3c7ede8f81feaeb465ba0285437ecb4bb902d2/include -I/home/nikolas/.cache/CPM/cccl/480773bad556fc453d6464138c650bb777b2f33f/thrust/thrust/cmake/../.. -I/home/nikolas/.cache/CPM/cccl/480773bad556fc453d6464138c650bb777b2f33f/libcudacxx/lib/cmake/libcudacxx/../../../include -I/home/nikolas/.cache/CPM/cccl/480773bad556fc453d6464138c650bb777b2f33f/cub/cub/cmake/../.. -I/home/nikolas/.cache/CPM/nvtx3/72787e0a62f981a1041689c3aa467492b6b367e9/c/include -isystem /opt/DiFfRG/bundled/boost_install/include -isystem /home/nikolas/.cache/CPM/rapidcsv/8244dab2e3c3cce07da43e9e415350ea2c4144a4/src -isystem /home/nikolas/.cache/CPM/thread-pool/ab0b9fae3dce23facf24fa61adc50a745ef50806/include -isystem /opt/DiFfRG/bundled/dealii_install/include -isystem /opt/DiFfRG/bundled/dealii_install/include/deal.II/bundled -isystem /opt/DiFfRG/bundled/oneTBB_install/include -isystem /opt/DiFfRG/bundled/kokkos_install/include -isystem /opt/DiFfRG/bundled/sundials_install/include -isystem /home/nikolas/.cache/CPM/eigen3/58981a25c67f31377b8fefb845952c82a01cc1ba -isystem /usr/local/cuda-12.2/targets/x86_64-linux/include -isystem /opt/DiFfRG/include -march=native -fPIC -O3 -ffast-math -fno-finite-math-only -O3 -DNDEBUG -std=c++20 -fPIE -pedantic -Wall -Wextra -Wmissing-braces -Woverloaded-virtual -Wpointer-arith -Wsign-compare -Wsuggest-override -Wswitch -Wsynth -Wwrite-strings -Wno-placement-new -Wno-deprecated-declarations -Wno-literal-suffix -Wno-psabi -Wno-unused-local-typedefs -fopenmp-simd -march=native -fPIC -O3 -ffast-math -fno-finite-math-only -O2 -funroll-loops -funroll-all-loops -Wno-unused-parameter -Wno-misleading-indentation -o CMakeFiles/QuarkMesonDiquarkLPA.dir/QMD.cc.o -c /home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/QMD.cc",
+  "file": "/home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/QMD.cc",
+  "output": "CMakeFiles/QuarkMesonDiquarkLPA.dir/QMD.cc.o"
+},
+{
+  "directory": "/home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/build/_deps/fmt-build",
+  "command": "/usr/bin/c++ -DFMT_LIB_EXPORT -Dfmt_EXPORTS -I/home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/include -isystem /opt/DiFfRG/bundled/boost_install/include -isystem /home/nikolas/.cache/CPM/rapidcsv/8244dab2e3c3cce07da43e9e415350ea2c4144a4/src -isystem /home/nikolas/.cache/CPM/thread-pool/ab0b9fae3dce23facf24fa61adc50a745ef50806/include -march=native -fPIC -O3 -ffast-math -fno-finite-math-only -O3 -DNDEBUG -std=c++20 -fPIC -o CMakeFiles/fmt.dir/src/format.cc.o -c /home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/src/format.cc",
+  "file": "/home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/src/format.cc",
+  "output": "_deps/fmt-build/CMakeFiles/fmt.dir/src/format.cc.o"
+},
+{
+  "directory": "/home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/build/_deps/fmt-build",
+  "command": "/usr/bin/c++ -DFMT_LIB_EXPORT -Dfmt_EXPORTS -I/home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/include -isystem /opt/DiFfRG/bundled/boost_install/include -isystem /home/nikolas/.cache/CPM/rapidcsv/8244dab2e3c3cce07da43e9e415350ea2c4144a4/src -isystem /home/nikolas/.cache/CPM/thread-pool/ab0b9fae3dce23facf24fa61adc50a745ef50806/include -march=native -fPIC -O3 -ffast-math -fno-finite-math-only -O3 -DNDEBUG -std=c++20 -fPIC -o CMakeFiles/fmt.dir/src/os.cc.o -c /home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/src/os.cc",
+  "file": "/home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/src/os.cc",
+  "output": "_deps/fmt-build/CMakeFiles/fmt.dir/src/os.cc.o"
+},
+{
+  "directory": "/home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DFMT_HEADER_ONLY=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dspdlog_EXPORTS -I/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/include -I/home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/include -isystem /opt/DiFfRG/bundled/boost_install/include -isystem /home/nikolas/.cache/CPM/rapidcsv/8244dab2e3c3cce07da43e9e415350ea2c4144a4/src -isystem /home/nikolas/.cache/CPM/thread-pool/ab0b9fae3dce23facf24fa61adc50a745ef50806/include -march=native -fPIC -O3 -ffast-math -fno-finite-math-only -O3 -DNDEBUG -std=c++20 -fPIC -o CMakeFiles/spdlog.dir/src/spdlog.cpp.o -c /home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/src/spdlog.cpp",
+  "file": "/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/src/spdlog.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/spdlog.cpp.o"
+},
+{
+  "directory": "/home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DFMT_HEADER_ONLY=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dspdlog_EXPORTS -I/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/include -I/home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/include -isystem /opt/DiFfRG/bundled/boost_install/include -isystem /home/nikolas/.cache/CPM/rapidcsv/8244dab2e3c3cce07da43e9e415350ea2c4144a4/src -isystem /home/nikolas/.cache/CPM/thread-pool/ab0b9fae3dce23facf24fa61adc50a745ef50806/include -march=native -fPIC -O3 -ffast-math -fno-finite-math-only -O3 -DNDEBUG -std=c++20 -fPIC -o CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o -c /home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/src/stdout_sinks.cpp",
+  "file": "/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/src/stdout_sinks.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.o"
+},
+{
+  "directory": "/home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DFMT_HEADER_ONLY=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dspdlog_EXPORTS -I/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/include -I/home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/include -isystem /opt/DiFfRG/bundled/boost_install/include -isystem /home/nikolas/.cache/CPM/rapidcsv/8244dab2e3c3cce07da43e9e415350ea2c4144a4/src -isystem /home/nikolas/.cache/CPM/thread-pool/ab0b9fae3dce23facf24fa61adc50a745ef50806/include -march=native -fPIC -O3 -ffast-math -fno-finite-math-only -O3 -DNDEBUG -std=c++20 -fPIC -o CMakeFiles/spdlog.dir/src/color_sinks.cpp.o -c /home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/src/color_sinks.cpp",
+  "file": "/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/src/color_sinks.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/color_sinks.cpp.o"
+},
+{
+  "directory": "/home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DFMT_HEADER_ONLY=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dspdlog_EXPORTS -I/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/include -I/home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/include -isystem /opt/DiFfRG/bundled/boost_install/include -isystem /home/nikolas/.cache/CPM/rapidcsv/8244dab2e3c3cce07da43e9e415350ea2c4144a4/src -isystem /home/nikolas/.cache/CPM/thread-pool/ab0b9fae3dce23facf24fa61adc50a745ef50806/include -march=native -fPIC -O3 -ffast-math -fno-finite-math-only -O3 -DNDEBUG -std=c++20 -fPIC -o CMakeFiles/spdlog.dir/src/file_sinks.cpp.o -c /home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/src/file_sinks.cpp",
+  "file": "/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/src/file_sinks.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/file_sinks.cpp.o"
+},
+{
+  "directory": "/home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DFMT_HEADER_ONLY=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dspdlog_EXPORTS -I/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/include -I/home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/include -isystem /opt/DiFfRG/bundled/boost_install/include -isystem /home/nikolas/.cache/CPM/rapidcsv/8244dab2e3c3cce07da43e9e415350ea2c4144a4/src -isystem /home/nikolas/.cache/CPM/thread-pool/ab0b9fae3dce23facf24fa61adc50a745ef50806/include -march=native -fPIC -O3 -ffast-math -fno-finite-math-only -O3 -DNDEBUG -std=c++20 -fPIC -o CMakeFiles/spdlog.dir/src/async.cpp.o -c /home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/src/async.cpp",
+  "file": "/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/src/async.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/async.cpp.o"
+},
+{
+  "directory": "/home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/build/_deps/spdlog-build",
+  "command": "/usr/bin/c++ -DFMT_HEADER_ONLY=1 -DSPDLOG_COMPILED_LIB -DSPDLOG_FMT_EXTERNAL -DSPDLOG_SHARED_LIB -Dspdlog_EXPORTS -I/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/include -I/home/nikolas/.cache/CPM/fmt/cc9505ea880bebe7edd7464fd9d50f6db1beee73/include -isystem /opt/DiFfRG/bundled/boost_install/include -isystem /home/nikolas/.cache/CPM/rapidcsv/8244dab2e3c3cce07da43e9e415350ea2c4144a4/src -isystem /home/nikolas/.cache/CPM/thread-pool/ab0b9fae3dce23facf24fa61adc50a745ef50806/include -march=native -fPIC -O3 -ffast-math -fno-finite-math-only -O3 -DNDEBUG -std=c++20 -fPIC -o CMakeFiles/spdlog.dir/src/cfg.cpp.o -c /home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/src/cfg.cpp",
+  "file": "/home/nikolas/.cache/CPM/spdlog/443410e221e7e8ec28a604b5582ec74f8de96906/src/cfg.cpp",
+  "output": "_deps/spdlog-build/CMakeFiles/spdlog.dir/src/cfg.cpp.o"
+}
+]

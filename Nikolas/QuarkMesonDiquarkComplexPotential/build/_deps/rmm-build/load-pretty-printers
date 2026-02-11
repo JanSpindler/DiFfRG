@@ -1,0 +1,2 @@
+source /home/nikolas/.cache/CPM/cccl/480773bad556fc453d6464138c650bb777b2f33f/thrust/scripts/gdb-pretty-printers.py
+source /home/nikolas/.cache/CPM/rmm/8f3c7ede8f81feaeb465ba0285437ecb4bb902d2/scripts/gdb-pretty-printers.py

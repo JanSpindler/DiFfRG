@@ -1,0 +1,3 @@
+include("/opt/DiFfRG/cmake/CPM.cmake")
+CPMAddPackage("NAME;fmt;VERSION;11.0.2;GIT_REPOSITORY;https://github.com/fmtlib/fmt.git;GIT_TAG;11.0.2;GIT_SHALLOW;ON;PATCH_COMMAND;/usr/bin/cmake;-P;/home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/build/rapids-cmake/patches/fmt/patch.cmake;EXCLUDE_FROM_ALL;OFF;OPTIONS;FMT_INSTALL ON;CMAKE_POSITION_INDEPENDENT_CODE ON")
+set(fmt_FOUND TRUE)

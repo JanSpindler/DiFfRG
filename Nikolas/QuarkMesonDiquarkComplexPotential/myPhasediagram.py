@@ -9,14 +9,14 @@ from pathlib import Path
 import adaptive
 from adaptive.runner import SequentialExecutor
 
-basePath = "~/Code/Other/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotentialSigma"
+basePath = "/home/spindler-old/Code/Other/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential"
 pathOfExecutable = basePath + "/build/QuarkMesonDiquarkLPA"
 pathOfPhaseDiagram = basePath + "/PhaseDiagram"
 pathOfCSVphysical = basePath + "/build/output_data_running_EoM.csv"
 pathOfCSVchiral = basePath + "/build/output_data_chiral.csv"
 ogJsonPath = basePath + "/parameter.json"
 ADAPTIVE_DIR = Path(basePath) / "adaptive_artifacts"
-ADAPTIVE_DIR.mkdir(exist_ok=True)
+os.makedirs(ADAPTIVE_DIR, exist_ok=True)
 
 lossGoal = 0.001
 
@@ -110,7 +110,7 @@ def solvePoint(point):
     combinedDataframe.to_csv(resultsCSVPath, index=False)
     return sigmaGuess
 
-# learner = adaptive.Learner2D(solvePoint, bounds=[(0.001, 0.25), (0.001, 0.3)])
+learner = adaptive.Learner2D(solvePoint, bounds=[(0.001, 0.25), (0.001, 0.3)])
 # learner = adaptive.Learner2D(solvePoint, bounds=[(0.25, 0.5), (0.001, 0.3)])
 # learner = adaptive.Learner2D(solvePoint, bounds=[(0.001, 0.25), (0.3, 0.6)])
 # learner = adaptive.Learner2D(solvePoint, bounds=[(0.25, 0.5), (0.3, 0.6)])

@@ -16,10 +16,10 @@ cd $BUILD_PATH
 
 cmake -DCMAKE_BUILD_TYPE=Release \
   -DTBB_TEST=OFF \
-  -DCMAKE_C_COMPILER=/usr/bin/gcc-12 \
-  -DCMAKE_CXX_COMPILER=/usr/bin/g++-12 \
-  -DCMAKE_AR=/usr/bin/gcc-ar-12 \
-  -DCMAKE_RANLIB=/usr/bin/gcc-ranlib-12 \
+  -DCMAKE_C_COMPILER=/usr/bin/gcc \
+  -DCMAKE_CXX_COMPILER=/usr/bin/g++ \
+  -DCMAKE_AR=/usr/bin/gcc-ar \
+  -DCMAKE_RANLIB=/usr/bin/gcc-ranlib \
   -DCMAKE_CXX_FLAGS="${CXX_FLAGS}" \
   -DCMAKE_EXE_LINKER_FLAGS="${EXE_LINKER_FLAGS}" \
   -DCMAKE_CXX_STANDARD=20 \

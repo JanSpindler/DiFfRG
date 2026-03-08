@@ -1,3 +1,0 @@
-include("/opt/DiFfRG/cmake/CPM.cmake")
-CPMAddPackage("NAME;spdlog;VERSION;1.14.1;GIT_REPOSITORY;https://github.com/gabime/spdlog.git;GIT_TAG;v1.14.1;GIT_SHALLOW;ON;EXCLUDE_FROM_ALL;OFF;OPTIONS;SPDLOG_INSTALL ON;SPDLOG_FMT_EXTERNAL_HO ON")
-set(spdlog_FOUND TRUE)

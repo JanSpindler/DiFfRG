@@ -1,1 +1,0 @@
-/usr/bin/c++ -fPIC -march=native -fPIC -O3 -ffast-math -fno-finite-math-only -O3 -DNDEBUG -shared -Wl,-soname,libfmt.so.11 -o libfmt.so.11.0.2 CMakeFiles/fmt.dir/src/format.cc.o CMakeFiles/fmt.dir/src/os.cc.o CMakeFiles/fmt.dir/cmake_device_link.o

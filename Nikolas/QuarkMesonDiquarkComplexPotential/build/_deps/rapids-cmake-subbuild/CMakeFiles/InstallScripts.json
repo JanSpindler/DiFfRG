@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/nikolas/masterthesis/DiFfRG/Nikolas/QuarkMesonDiquarkComplexPotential/build/_deps/rapids-cmake-subbuild/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

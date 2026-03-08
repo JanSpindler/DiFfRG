@@ -15,7 +15,7 @@ using Discretization = CG::Discretization<Model::Components, double, Rectangular
 using VectorType = typename Discretization::VectorType;
 using SparseMatrixType = typename Discretization::SparseMatrixType;
 using Assembler = CG::Assembler<Discretization, Model>;
-using TimeStepper = TimeStepperSUNDIALS_IDA_BoostABM<VectorType, SparseMatrixType, dim, UMFPack>;
+using TimeStepper = TimeStepperSUNDIALS_IDA_BoostABM<VectorType, SparseMatrixType, dim, GMRES>;
 
 // Adapter for SUNDIALS IDA: provides exactly two blocks (y, ydot) via AbstractFlowingVariables.
 template <typename NumberType>

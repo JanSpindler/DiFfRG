@@ -105,7 +105,7 @@ class QuarkMesonDiquarkLPA
     {
       const double hD = prm.hD;
       const double k2 = powr<2>(k);
-      const double k5 = powr<5>(k);
+      //const double k5 = powr<5>(k);
 
       const auto rhoPhi = pos[0];
       const auto rhoD = pos[1];
@@ -127,9 +127,9 @@ class QuarkMesonDiquarkLPA
       const auto m2Quark = powr<2>(prm.hPhi) * rhoPhi / (prm.Nf);
       const auto m2QuarkImag = 0; 
       const auto m2QuarkComplex = m2Quark + I * m2QuarkImag;
-      const auto M2Sigma = m2Pion + 2.0 * rhoPhi * fe_derivatives[idxf("uPhi")][0];
-      const auto M2SigmaImag = fe_functions[idxf("uPhiImag")];
-      const auto M2SigmaComplex = M2Sigma + I * M2SigmaImag;
+      //const auto M2Sigma = m2Pion + 2.0 * rhoPhi * fe_derivatives[idxf("uPhi")][0];
+      //const auto M2SigmaImag = fe_functions[idxf("uPhiImag")];
+      //const auto M2SigmaComplex = M2Sigma + I * M2SigmaImag;
       const auto M2Diquark = fe_functions[idxf("uD")] + rhoD * fe_derivatives[idxf("uD")][1];
       const auto M2DiquarkImag = fe_functions[idxf("uDImag")] + rhoD * fe_derivatives[idxf("uDImag")][1];
       const auto M2DiquarkComplex = M2Diquark + I * M2DiquarkImag;
@@ -144,10 +144,9 @@ class QuarkMesonDiquarkLPA
       const auto xi2Complex = powr<2>(rhoD * (fe_functions[idxf("uD")] + I * fe_functions[idxf("uDImag")]));
       //const NT chiD = safe_sqrt(16 * powr<2>(prm.muq) * (k2 + M2Diquark) + xi2);
       const auto chiDComplex = sqrt(16. * powr<2>(prm.muq) * (k2 + M2DiquarkComplex) + xi2Complex);
-      const auto b2Complex = 4. * rhoD * rhoPhi * powr<2>(fe_derivatives[idxf("uPhi")][1] + I * fe_derivatives[idxf("uPhiImag")][1]);
+      //const auto b2Complex = 4. * rhoD * rhoPhi * powr<2>(fe_derivatives[idxf("uPhi")][1] + I * fe_derivatives[idxf("uPhiImag")][1]);
       //const auto b2 = 4. * rhoD * rhoPhi * std::pow(std::complex<NT>(fe_derivatives[idxf("uPhi")][1], fe_derivatives[idxf("uPhiImag")][1]), 2);
 
-      auto finite = [](auto x) { return std::isfinite(static_cast<double>(x)); };
 
       /*auto fail = [&](const char *which, const NT value,
                       const NT t_qrg, const NT t_qb, const NT t_pi, const NT t_si,
@@ -192,16 +191,17 @@ class QuarkMesonDiquarkLPA
       const auto t_du  = fluxDiquarkUncoupled<NT>(prm.T, prm.muq, chiDComplex, M2DiquarkComplex);
       //if (!finite(t_du))  fail("t_du",  t_du,  t_qrg, t_qb,  t_pi,  t_si,  t_d,   t_du,  NT(0));
 
-      const auto t_su  = fluxSigmaUncoupled<NT>(prm.T, M2SigmaComplex);
+      //const auto t_su  = fluxSigmaUncoupled<NT>(prm.T, M2SigmaComplex);
       //if (!finite(t_su))  fail("t_su",  t_su,  t_qrg, t_qb,  t_pi,  t_si,  t_d,   t_du,  t_su);
 
-      // auto f_omega = make_F(k, M2Diquark, M2Sigma, xi2, b2);
+      //auto f_omega = make_F(k, M2DiquarkComplex, m2SigmaComplex, xi2Complex, b2Complex);
 
 
       // quad uses double nodes; f_omega accepts "auto omega" so it's fine
-      // matsubara_quadrature.reinit(prm.T, k);
-      //auto nonAnalyticalFlowMatsubaraSum = matsubara_quadrature.sum_arguments(matsubaraIntegrand<NT>, k, prm.muq, M2Diquark, M2Sigma, xi2, b2);
-      //const NT t_d_na = - 0.5 * b2 * k5 * nonAnalyticalFlowMatsubaraSum / (3. * M_PI * M_PI);
+      //matsubara_quadrature.reinit(prm.T, k);
+      //auto nonAnalyticalFlowMatsubaraSum = matsubara_quadrature.sum_arguments(make_F<NT>, k, prm.muq, M2DiquarkComplex, m2SigmaComplex, xi2Complex, b2Complex);
+      //auto nonAnalyticalFlowMatsubaraSum = matsubara_quadrature.sum(f_omega);
+      //const auto t_d_na = - 0.5 * b2Complex * k5 * nonAnalyticalFlowMatsubaraSum / (3. * M_PI * M_PI);
       // if (!finite(t_d_na))  fail("t_d_na",  t_d_na,  NT(0), NT(0), NT(0), NT(0), NT(0), NT(0));
 
       // std::cout << f_omega(0.) << std::endl; 
@@ -211,8 +211,8 @@ class QuarkMesonDiquarkLPA
       // std::cout << "Non-analytical flow matsubara sum: " << nonAnalyticalFlowMatsubaraSum << std::endl;
 
       //const auto rhs_common = t_qrg + t_qb + t_pi + t_si + t_d + t_du + t_su - 0.5 * b2 * k5 * nonAnalyticalFlowMatsubaraSum / (3. * M_PI * M_PI);
-      const auto rhs_real = real(t_qrg) + real(t_qb) + real(t_pi) + real(t_si) + real(t_d) + real(t_du);// + t_d_na;
-      const auto rhs_imag = imag(t_qrg) + imag(t_qb) + imag(t_pi) + imag(t_si) + imag(t_d) + imag(t_du);// + t_d_na;
+      const auto rhs_real = real(t_qrg) + real(t_qb) + real(t_pi) + real(t_si) + real(t_d) + real(t_du);// + real(t_d_na);
+      const auto rhs_imag = imag(t_qrg) + imag(t_qb) + imag(t_pi) + imag(t_si) + imag(t_d) + imag(t_du);// + imag(t_d_na);
       //if (!finite(rhs_common)) fail("rhs_common", rhs_common, t_qrg, t_qb, t_pi, t_si, t_d, t_du, t_su);
 
       flux[idxf("uPhi")][0] = rhs_real;
@@ -220,7 +220,7 @@ class QuarkMesonDiquarkLPA
       flux[idxf("uPhiImag")][0] = rhs_imag;
       flux[idxf("uDImag")][1]   = rhs_imag;
 
-      auto is_finite = [](auto x){ return std::isfinite(static_cast<double>(x)); };
+      //auto is_finite = [](auto x){ return std::isfinite(static_cast<double>(x)); };
 
       /*if (!is_finite(rhs_common)) {
         spdlog::get("log")->error(
@@ -243,47 +243,47 @@ class QuarkMesonDiquarkLPA
       }*/
     }
   private:
-    template <typename T1, typename T2, typename T3, typename T4>
-    auto make_F(const double k, T1 M2Diquark_, T2 M2Sigma_, T3 xi2_in, T4 b2_in) const
-{
-    const auto pr2 = powr<2>(k);
+//     template <typename T1, typename T2, typename T3, typename T4>
+//     auto make_F(const double k, T1 M2Diquark_, T2 M2Sigma_, T3 xi2_in, T4 b2_in) const
+// {
+//     const auto pr2 = powr<2>(k);
 
-    // const auto M2Diquark_ = M2Diquark_in;
-    // const auto M2Sigma_   = M2Sigma_in;
-    const auto xi2_       = xi2_in;
-    const auto b2_        = b2_in;
+//     // const auto M2Diquark_ = M2Diquark_in;
+//     // const auto M2Sigma_   = M2Sigma_in;
+//     const auto xi2_       = xi2_in;
+//     const auto b2_        = b2_in;
 
-    const auto muq_ = prm.muq; 
+//     const auto muq_ = prm.muq; 
 
-    // Now define the Ks as functions of real omega (same scalar type as omega)
-    auto Kdplus = [](const auto omega, const auto pr2, const auto muq_, const auto M2Diquark_)
-    {
-        return pr2 - powr<2>(omega + 2 * muq_) + M2Diquark_;
-    };
+//     // Now define the Ks as functions of real omega (same scalar type as omega)
+//     auto Kdplus = [](const auto omega, const auto pr2, const auto muq_, const auto M2Diquark_)
+//     {
+//         return pr2 - powr<2>(omega + 2 * muq_) + M2Diquark_;
+//     };
 
-    auto Kdminus = [](const auto omega, const auto pr2, const auto muq_, const auto M2Diquark_)
-    {
-        return pr2 - powr<2>(omega - 2 * muq_) + M2Diquark_;
-    };
+//     auto Kdminus = [](const auto omega, const auto pr2, const auto muq_, const auto M2Diquark_)
+//     {
+//         return pr2 - powr<2>(omega - 2 * muq_) + M2Diquark_;
+//     };
 
-    auto Ksigma = [](const auto omega, const auto pr2, const auto M2Sigma_)
-    {
-        return pr2 - powr<2>(omega) + M2Sigma_;
-    };
+//     auto Ksigma = [](const auto omega, const auto pr2, const auto M2Sigma_)
+//     {
+//         return pr2 - powr<2>(omega) + M2Sigma_;
+//     };
 
-    // Return ONE function of omega suitable for MatsubaraQuadrature<double>::sum
-    return [=](const auto omega)
-    {
-        const auto kd_p = Kdplus(omega, pr2, prm.muq, M2Diquark_);
-        const auto kd_m = Kdminus(omega, pr2, prm.muq, M2Diquark_);
-        const auto ks   = Ksigma(omega, pr2, M2Sigma_);
+//     // Return ONE function of omega suitable for MatsubaraQuadrature<double>::sum
+//     return [=](const auto omega)
+//     {
+//         const auto kd_p = Kdplus(omega, pr2, prm.muq, M2Diquark_);
+//         const auto kd_m = Kdminus(omega, pr2, prm.muq, M2Diquark_);
+//         const auto ks   = Ksigma(omega, pr2, M2Sigma_);
 
-        // Your expression, rewritten in terms of kd_p/kd_m/ks and xi2_/b2_
-        const auto sxi = safe_sqrt(xi2_);
+//         // Your expression, rewritten in terms of kd_p/kd_m/ks and xi2_/b2_
+//         const auto sxi = safe_sqrt(xi2_);
 
-        return sxi * (kd_p * ks + kd_m * (kd_p + ks) - xi2_) / (ks * (kd_p * kd_m - xi2_) * (kd_m * kd_p * ks + sxi * (b2_ - ks * sxi)));
-    };
-}
+//         return sxi * (kd_p * ks + kd_m * (kd_p + ks) - xi2_) / (ks * (kd_p * kd_m - xi2_) * (kd_m * kd_p * ks + sxi * (b2_ - ks * sxi)));
+//     };
+// }
     template <typename NT>
     struct ReIm {
       NT re;
@@ -303,8 +303,8 @@ class QuarkMesonDiquarkLPA
       using std::exp;
 
 
-      const double sAmp   = prm.sAmp;
-      const double sWidth = prm.sWidth;
+      const double sAmp   = 0.01;
+      const double sWidth = 0.5;
       const double sig2   = sWidth * sWidth;
 
       const double ell  = log(k / prm.muq);
@@ -393,18 +393,18 @@ class QuarkMesonDiquarkLPA
         const auto result = pref * ( (1 - r) * CothFiniteT(Em, T0) / Em + (1 + r) * CothFiniteT(Ep, T0) / Ep );
         return result;
       }
-    template <typename NT> 
-    auto fluxSigmaUncoupled(const double T, const auto M2Sigma) const{
+    //template <typename NT> 
+    //auto fluxSigmaUncoupled(const double T, const auto M2Sigma) const{
       //const std::complex<NT> T0(prm.T, 0);
-      const double T0 = prm.T;
+    //  const double T0 = prm.T;
       
-      const double k2 = powr<2>(k);
-      const double k5 = powr<5>(k);
+    //  const double k2 = powr<2>(k);
+    //  const double k5 = powr<5>(k);
 
-      const auto result = k5/(12 * M_PI * M_PI) * CothFiniteT(sqrt(k2 + M2Sigma),T0)/sqrt(k2 + M2Sigma);
+    //  const auto result = k5/(12 * M_PI * M_PI) * CothFiniteT(sqrt(k2 + M2Sigma),T0)/sqrt(k2 + M2Sigma);
 
-      return result;
-    }
+    //  return result;
+    //}
   public:
     template <int dim, typename Vector>
     std::array<double, 2> EoM(const Point<dim> &x, const Vector &u_i) const
@@ -443,12 +443,6 @@ class QuarkMesonDiquarkLPA
         out[0] = last_EoM_phi;
       } else {
         last_EoM_phi = EoM[0];
-      }
-      if (lock_EoM_d || last_EoM_d - EoM[1] > 5e-4) {
-        lock_EoM_d = true;
-        out[1] = last_EoM_d;
-      } else {
-        last_EoM_d = EoM[1];
       }
       return out;
     }
